@@ -31,14 +31,13 @@ class Sensor:
 
         if self.trinket != False:
             self.endpoint = self.trinket[0][(0,0)][0]
-
-        logger.info("Button Ready");
+            logger.info("Button Ready");
 
     def readline(self):
         if not self.trinket:
             logging.error('No trinket connected, trying again...')
             self.reconnect()
-            return
+            return self.readline()
 
         try:
             char_buffer = ''
