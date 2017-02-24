@@ -12,7 +12,8 @@ logger.setLevel(10)
 def state_changed(value):
     if value > 0:
         logger.debug("Deployed!")
-        subprocess.check_call(["open", "/System/Library/Frameworks/ScreenSaver.framework/Versions/A/Resources/ScreenSaverEngine.app"])
+        #subprocess.check_call(["open", "/System/Library/Frameworks/ScreenSaver.framework/Versions/A/Resources/ScreenSaverEngine.app"])
+        subprocess.check_call(["open", "/Applications/Google Chrome.app", "http://member.angieslist.com/"])
     else:
         logger.debug("Done!")
 
